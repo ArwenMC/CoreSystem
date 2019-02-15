@@ -1,0 +1,6 @@
+name: CoreSystem
+version: 1.2.4
+author: ArwenMC
+authors: ["Alexander Milanovich"]
+main: com.arwenmc.CoreSys
+commands:
