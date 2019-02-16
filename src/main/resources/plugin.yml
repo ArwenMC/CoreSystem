@@ -4,3 +4,6 @@ author: ArwenMC
 authors: ["Alexander Milanovich"]
 main: com.arwenmc.CoreSys
 commands:
+  rank:
+    description: Your description
+    usage: /rank
