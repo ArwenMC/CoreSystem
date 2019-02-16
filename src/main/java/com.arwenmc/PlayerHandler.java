@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class PlayerHandler {
 
-   public int Owner = 100;
-  public  int Admin = 80;
-  public  int Moderator = 60;
-public int Member = 0;
+    public int Owner = 100;
+    public  int Admin = 80;
+    public  int Moderator = 60;
+    public int Member = 0;
 
     public void SetupPlayer(Player player) {
         File file = new File("plugins/CoreSys/PlayerData/" + player.getUniqueId() + ".yml");
@@ -64,7 +64,7 @@ public int Member = 0;
         if(Rank == Owner) {
             return ChatColor.RED.toString() + ChatColor.BOLD + "Owner " + ChatColor.WHITE;
         }else if(Rank == Admin) {
-            return ChatColor.GREEN.toString() + ChatColor.BOLD + "Admin " + ChatColor.WHITE;
+            return ChatColor.AQUA.toString() + ChatColor.BOLD + "Admin " + ChatColor.WHITE;
         }else if(Rank == Moderator) {
             return ChatColor.LIGHT_PURPLE.toString() + ChatColor.BOLD + "Mod " + ChatColor.WHITE;
         }else{

@@ -1,6 +1,7 @@
 package com.arwenmc;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -65,25 +66,25 @@ public class Events implements Listener {
                             if (rankValue < rank) {
                                 if (PlayerHandler.getRank(target) < rank ) {
                                     if(PlayerHandler.setRank(target, rankValue)) {
-                                        player.sendMessage("Successfully set " + target.getName() + "'s rank to " + rankName);
-                                        target.sendMessage("Your rank has been changed to " + rankName);
+                                        player.sendMessage(ChatColor.GREEN +"Successfully set " + target.getName() + "'s rank to " + rankName);
+                                        target.sendMessage(ChatColor.GREEN +"Your rank has been changed to " + rankName);
                                         PlayerHandler.refreshRanks();
                                     }
                                 }else {
-                                  player.sendMessage("Error: You can't modify people who are the same or a higher rank than you!");
+                                  player.sendMessage(ChatColor.RED +"Error: You can't modify people who are the same or a higher rank than you!");
                                 }
                             } else {
-                                player.sendMessage("Error: You can't use ranks bigger than or equal to yours!");
+                                player.sendMessage(ChatColor.RED +"Error: You can't use ranks bigger than or equal to yours!");
                             }
                         } else {
-                            player.sendMessage("Error: " + rankName + " is not a rank!");
+                            player.sendMessage(ChatColor.RED +"Error: " + rankName + " is not a rank!");
                         }
 
                     } else {
-                        player.sendMessage("Error: " + targetName + " is not online!");
+                        player.sendMessage(ChatColor.RED + "Error: " + targetName + " is not online!");
                     }
                 } else {
-                    player.sendMessage("Usage: /rank <player> <rank>");
+                    player.sendMessage(ChatColor.RED + "Usage: /rank <player> <rank>");
                 }
             }
         }

@@ -8,6 +8,7 @@
       <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:3.8.0" />
       <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver:3.8.0" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
     </root>
   </artifact>
 </component>

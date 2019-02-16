@@ -1,0 +1,48 @@
+# ArwencMC ServerCore Configuration
+# Each command can have its permission set from one of 5 modes: admin, staff, donator, member or player. More information is in the readme.
+database:
+  db_enabled: false
+  database_type: mysql # mysql or mongodb
+  host: ""
+  port: 3306 # make sure to change this if you are using MongoDB
+  database: ""
+  username: ""
+  password: ""
+general:
+  not_player: "&cYou must be a player in order to use this command."
+  no_permission: "&cYou do not have permission to use this command."
+  missing_argument: "&cYou are missing an argument. Please check the usage."
+  unkown_argument: "&cThe argument you provided is unknown. Please check the usage."
+  prefix: "&7[&5Arwen&7] "
+  player_offline: "&cThe player specified is not online."
+  command_disabled: "&cThat particular command has been disabled"
+features:
+  fly:
+    fly_permission: "staff"
+    fly_enable: true
+    fly_enabled: "&aYour flight mode has been enabled."
+    fly_disabled: "&cYour flight mode has been disabled."
+  gamemode:
+    gamemode_permission: "admin"
+    gamemode_enable: false
+    gamemode_log: console # Log changes to either console or database or false
+    gm_0: "&7Your gamemode is now &csurvival"
+    gm_1: "&7Your gamemode is now &acreative"
+    gm_3: "&7Your gamemode is now &4adventure"
+    gm_4: "&7Your gamemode is now &6spectator"
+    gamemode_actionbar_enable: true # Enable the sending of actionbar messages when the user changes gamemode.
+    gamemode_actionbar_same_messages: true # Use the same messages for both the actionbar and chat.
+  chat:
+    chat_permission: "staff"
+    chat_bypass_permission: "admin" # Permission required to bypass muted chat.
+    mutechat_enable: true
+    chat_muted: "&cChat is muted." # Triggered if some tries to talk while chat is muted.
+    chat_now_muted: "&cChat muted is now turned on."
+    chat_now_unmuted: "&aChat muted is now turend off."
+  help:
+    help_permission: "player"
+    help_enable: true
+    messages:
+      - "&aHelp is always there if you need it."
+      - "&aContact a member of Staff."
+debug: false # Enables more logging to the console.
