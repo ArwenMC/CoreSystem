@@ -37,16 +37,23 @@ public class MongoDB {
 }
 
 /*
+
 import java.net.UnknownHostException;
 import java.util.UUID;
+
 public class MongoDB {
+
     ServerCore plugin;
+
     public MongoDB(ServerCore instance) {
         plugin = instance;
     }
+
     private DBCollection players;
     private DB Main;
     private MongoClient client;
+
+
     public boolean connect(String ip, int port){
         //Connect to the specified ip and port
         //Default is localhost, 27017
@@ -60,6 +67,8 @@ public class MongoDB {
         players = Main.getCollection("players");
         return true;
     }
+
+
     /**
      * Explanation for storePlayer
      *
@@ -75,6 +84,7 @@ public class MongoDB {
         obj.put("name", name);
         obj.put("rank", rank);
         obj.put("Player Kills", pkills);
+
         //Inserts Player Into Collection
         players.insert(obj);
     }

@@ -4,3 +4,10 @@ author: ArwenMC
 authors: ["Alexander Milanovich"]
 main: com.arwenmc.CoreSys
 commands:
+  rank:
+    description: Rank your Players
+    usage: /rank
+  fly:
+    description: Command to fly
+    usage: /fly
+

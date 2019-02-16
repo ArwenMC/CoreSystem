@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CoreSys">
+    <output-path>$USER_HOME$/Desktop/Test Server/plugins</output-path>
+    <root id="archive" name="CoreSys.jar">
+      <element id="module-output" name="CoreSys" />
+      <element id="library" level="project" name="Maven: org.mongodb:bson:3.8.0" />
+      <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:3.8.0" />
+      <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:3.8.0" />
+      <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver:3.8.0" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/config.yml" />
+    </root>
+  </artifact>
+</component>
