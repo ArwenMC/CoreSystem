@@ -13,13 +13,14 @@ import java.io.IOException;
 
 public class PlayerHandler {
 
-    public int Owner = 100;
-    public  int Admin = 80;
-    public  int Moderator = 60;
-    public int Member = 0;
+    public static int Owner = 100;
+    public static int Admin = 80;
+    public static int Moderator = 60;
+    public static int Helper = 50;
+    public static int Member = 0;
 
     public void SetupPlayer(Player player) {
-        File file = new File("plugins/CoreSys/PlayerData/" + player.getUniqueId() + ".yml");
+        File file = new File("plugins/CoreSystem/PlayerData/" + player.getUniqueId() + ".yml");
 
         if(!file.exists()) {
             try {
@@ -41,7 +42,7 @@ public class PlayerHandler {
     }
 
     public boolean setRank(Player player, int rank){
-        File file = new File("plugins/CoreSys/PlayerData/" + player.getUniqueId() + ".yml");
+        File file = new File("plugins/CoreSystem/PlayerData/" + player.getUniqueId() + ".yml");
         YamlConfiguration yml = YamlConfiguration.loadConfiguration(file);
         yml.set("Rank", rank);
 
@@ -54,8 +55,8 @@ public class PlayerHandler {
         return true;
     }
 
-    public int getRank (Player player) {
-        File file = new File("plugins/CoreSys/PlayerData/" + player.getUniqueId() + ".yml");
+    public static int getRank(Player player) {
+        File file = new File("plugins/CoreSystem/PlayerData/" + player.getUniqueId() + ".yml");
         YamlConfiguration yml = YamlConfiguration.loadConfiguration(file);
                 return yml.getInt("Rank");
     }
@@ -67,6 +68,8 @@ public class PlayerHandler {
             return ChatColor.AQUA.toString() + ChatColor.BOLD + "Admin " + ChatColor.WHITE;
         }else if(Rank == Moderator) {
             return ChatColor.LIGHT_PURPLE.toString() + ChatColor.BOLD + "Mod " + ChatColor.WHITE;
+        }else if(Rank == Helper) {
+            return ChatColor.GREEN.toString() + ChatColor.BOLD + "Helper " + ChatColor.WHITE;
         }else{
             return "";
         }

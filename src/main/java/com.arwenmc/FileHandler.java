@@ -4,7 +4,7 @@ import java.io.File;
 
 public class FileHandler {
 
-    String Path = "plugins/CoreSys";
+    String Path = "plugins/CoreSystem";
 
     public void Setup() {
 

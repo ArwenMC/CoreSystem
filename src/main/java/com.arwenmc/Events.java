@@ -2,10 +2,7 @@ package com.arwenmc;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -15,6 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class Events implements Listener {
 
     PlayerHandler PlayerHandler;
+    CoreSys plugin;
 
     public Events(PlayerHandler _PlayerHandler) {
         PlayerHandler = _PlayerHandler;
@@ -55,6 +53,7 @@ public class Events implements Listener {
                             rankValue = PlayerHandler.Owner;
                         } else if (rankName.equals("admin")) {
                             rankValue = PlayerHandler.Admin;
+
                         } else if (rankName.equals("moderator")) {
                             rankValue = PlayerHandler.Moderator;
                         } else if (rankName.equals("member")) {
@@ -64,20 +63,20 @@ public class Events implements Listener {
                         }
                         if (rankValue >= 0) {
                             if (rankValue < rank) {
-                                if (PlayerHandler.getRank(target) < rank ) {
-                                    if(PlayerHandler.setRank(target, rankValue)) {
-                                        player.sendMessage(ChatColor.GREEN +"Successfully set " + target.getName() + "'s rank to " + rankName);
-                                        target.sendMessage(ChatColor.GREEN +"Your rank has been changed to " + rankName);
+                                if (PlayerHandler.getRank(target) < rank) {
+                                    if (PlayerHandler.setRank(target, rankValue)) {
+                                        player.sendMessage(ChatColor.GREEN + "Successfully set " + target.getName() + "'s rank to " + rankName);
+                                        target.sendMessage(ChatColor.GREEN + "Your rank has been changed to " + rankName);
                                         PlayerHandler.refreshRanks();
                                     }
-                                }else {
-                                  player.sendMessage(ChatColor.RED +"Error: You can't modify people who are the same or a higher rank than you!");
+                                } else {
+                                    player.sendMessage(ChatColor.RED + "Error: You can't modify people who are the same or a higher rank than you!");
                                 }
                             } else {
-                                player.sendMessage(ChatColor.RED +"Error: You can't use ranks bigger than or equal to yours!");
+                                player.sendMessage(ChatColor.RED + "Error: You can't use ranks bigger than or equal to yours!");
                             }
                         } else {
-                            player.sendMessage(ChatColor.RED +"Error: " + rankName + " is not a rank!");
+                            player.sendMessage(ChatColor.RED + "Error: " + rankName + " is not a rank!");
                         }
 
                     } else {
