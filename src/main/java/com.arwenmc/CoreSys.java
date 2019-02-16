@@ -12,6 +12,7 @@ public class CoreSys extends JavaPlugin implements Listener {
 
     /*
         Main Plugin Class For CoreSystem
+        TEst
      */
 
     public CoreSys plugin = this;
