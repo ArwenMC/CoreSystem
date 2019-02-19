@@ -26,7 +26,7 @@ public class PlayerHandler {
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                e.printStackTrace();
+                Bukkit.getLogger().severe("Error when creating file: " + e.getMessage());
             }
         }
         YamlConfiguration yml = YamlConfiguration.loadConfiguration(file);
