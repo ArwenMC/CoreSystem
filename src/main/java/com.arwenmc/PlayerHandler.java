@@ -31,6 +31,7 @@ public class PlayerHandler {
         }
         YamlConfiguration yml = YamlConfiguration.loadConfiguration(file);
         yml.addDefault("Name", player.getName());
+        yml.addDefault("UUID", player.getUniqueId());
         yml.addDefault("Rank", Member);
         yml.options().copyDefaults(true);
 
